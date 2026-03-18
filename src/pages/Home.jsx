@@ -177,7 +177,7 @@ export default function Home({ lang = "en", dark = false }) {
             transition={{ duration: 4, repeat: Infinity }}
           >
             <motion.img
-              src="/public/2.jpeg"
+              src="/2.jpeg"
               alt="Company"
               style={{
                 width: "100%",
