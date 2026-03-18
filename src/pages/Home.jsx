@@ -1,6 +1,7 @@
 // src/pages/Home.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Home({ lang = "en", dark = false }) {
   const content = {
@@ -128,32 +129,17 @@ export default function Home({ lang = "en", dark = false }) {
             variants={fadeInUp}
             style={{ display: "flex", gap: "16px", marginTop: "16px", flexWrap: "wrap" }}
           >
-            <motion.a
-              href="/services"
-              style={btnPrimary(dark)}
-              whileHover={{
-                scale: 1.1,
-                backgroundColor: dark ? "#2563eb" : "#1d4ed8",
-                boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
-              }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              {content[lang].btnServices}
-            </motion.a>
+            <motion.div whileHover={{ scale: 1.1, boxShadow: "0 5px 15px rgba(0,0,0,0.3)" }} transition={{ type: "spring", stiffness: 300 }}>
+              <Link to="/services" style={btnPrimary(dark)}>
+                {content[lang].btnServices}
+              </Link>
+            </motion.div>
 
-            <motion.a
-              href="/contact"
-              style={btnSecondary(dark)}
-              whileHover={{
-                scale: 1.1,
-                backgroundColor: dark ? "#1f2937" : "#3b82f6",
-                color: dark ? "#3b82f6" : "#ffffff",
-                boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
-              }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              {content[lang].btnContact}
-            </motion.a>
+            <motion.div whileHover={{ scale: 1.1, boxShadow: "0 5px 15px rgba(0,0,0,0.3)" }} transition={{ type: "spring", stiffness: 300 }}>
+              <Link to="/contact" style={btnSecondary(dark)}>
+                {content[lang].btnContact}
+              </Link>
+            </motion.div>
           </motion.div>
         </motion.div>
 
