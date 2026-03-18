@@ -1,0 +1,397 @@
+/* --------------------------
+   Global Reset
+--------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* --------------------------
+   Dark / Light Theme
+--------------------------- */
+.dark {
+  background-color: #111827; /* bg-gray-900 */
+  color: #f3f4f6; /* text-gray-100 */
+}
+
+.light {
+  background-color: #f9fafb; /* bg-gray-50 */
+  color: #111827; /* text-gray-900 */
+}
+
+/* --------------------------
+   Header Styles
+--------------------------- */
+header.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header.dark {
+  background-color: rgba(17, 24, 39, 0.85);
+}
+
+header.light {
+  background-color: rgba(249, 250, 251, 0.85);
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #3b82f6;
+}
+
+.header-icons button {
+  cursor: pointer;
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  transition: transform 0.3s;
+}
+
+.header-icons button:hover {
+  transform: scale(1.2);
+}
+
+/* --------------------------
+   Hero / Home Section
+--------------------------- */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-top: 0.5rem;
+}
+
+/* Features List */
+.hero ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .hero ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.hero ul li {
+  font-weight: 500;
+  color: #3b82f6;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  color: black;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+}
+
+.btn-secondary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Right Column Image - Circular 300x300 */
+.hero .hero-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50px; /* يمكنك تعديلها لتصبح أكثر دائرية */
+  border: 4px solid #3b82f6;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.hero .hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.hero .hero-image:hover {
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+}
+ /* Service copmonent */
+.services-section {
+  padding: 50px 20px;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.services-section.light {
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+.services-section.dark {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+/* Header */
+.services-section h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.services-section p {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 16px;
+}
+
+/* Container */
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Card */
+.service-card {
+  width: 300px;
+  height: 420px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* Dark mode card background */
+.services-section.dark .service-card {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+/* Hover */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+/* Image */
+.service-image {
+  position: relative;
+  height: 50%;
+  overflow: hidden;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Icon */
+.service-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #5D0A1C;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-size: 18px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+/* Content */
+.service-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.services-section.dark .service-content {
+  background: linear-gradient(to top, #111827, #1f2937);
+}
+
+.services-section.light .service-content {
+  background: linear-gradient(to top, #f5f5f5, white);
+}
+
+/* Titles & Description */
+.service-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.service-content p {
+  font-size: 14px;
+  flex: 1;
+}
+
+/* Button */
+.service-content a {
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #5D0A1C;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.service-content a:hover {
+  background-color: #b80f2c;
+}
+
+/* Fade-in */
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .services-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 650px) {
+  .service-card {
+    width: 90%;
+    height: 400px;
+  }
+}
+
+/*****************contact us******************/
+.contact-page { min-height:100vh; padding:60px 20px; transition:0.3s; }
+.contact-page.dark { background:#0f172a; color:#fff; }
+.contact-page.light { background:#f8fafc; color:#111; }
+
+.container { max-width:1100px; margin:auto; text-align:center; }
+.title { font-size:38px; margin-bottom:10px; }
+.desc { opacity:0.7; margin-bottom:40px; }
+
+.social-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:20px; margin-bottom:50px; }
+.card { padding:25px; border-radius:14px; text-decoration:none; color:white; font-weight:bold; display:flex; flex-direction:column; gap:10px; align-items:center; transition:0.3s; }
+.card:hover { transform: translateY(-6px) scale(1.05); }
+.whatsapp { background:#25d366; }
+.youtube { background:#ff0000; }
+.email { background:#3b82f6; }
+.telegram { background:#229ed9; }
+.linkedin { background:#0a66c2; }
+
+/* Quick Suggestions */
+.suggestions { max-width:700px; margin:auto; text-align:center; }
+.suggestion-grid { display:flex; flex-wrap:wrap; gap:15px; justify-content:center; margin-top:20px; }
+.suggestion-btn { padding:12px 20px; border:none; border-radius:12px; cursor:pointer; background:#6366f1; color:white; font-weight:bold; transition:0.2s; }
+.suggestion-btn:hover { background:#4f46e5; }
+.chosen-msg { margin-top:20px; font-weight:bold; }
+/***************end contact us***********/
