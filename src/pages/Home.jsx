@@ -33,160 +33,91 @@ export default function Home({ lang = "en", dark = false }) {
     },
   };
 
-  // Motion
-  const container = { hidden: {}, show: { transition: { staggerChildren: 0.2 } } };
-  const fadeInUp = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.8 } } };
-  const fadeInLeft = { hidden: { opacity: 0, x: -30 }, show: { opacity: 1, x: 0, transition: { duration: 0.8 } } };
-  const fadeInRight = { hidden: { opacity: 0, x: 30 }, show: { opacity: 1, x: 0, transition: { duration: 0.8 } } };
-
   const isMobile = window.innerWidth <= 768;
 
   return (
     <motion.section
       style={{
         minHeight: "100vh",
-        width: "100vw",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         padding: "24px",
       }}
-      variants={container}
-      initial="hidden"
-      animate="show"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
     >
       <div
         style={{
           display: "grid",
           gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
-          maxWidth: "1200px",
+          gap: "40px",
+          maxWidth: "1100px",
           width: "100%",
-          gap: "48px",
-          alignItems: "center",
         }}
       >
         {/* Left */}
-        <motion.div
-          variants={fadeInLeft}
+        <div
           style={{
             display: "flex",
             flexDirection: "column",
             gap: "16px",
-            alignItems: lang === "ar" ? "flex-end" : "flex-start",
             textAlign: lang === "ar" ? "right" : "left",
-            order: isMobile ? 2 : 1,
+            alignItems: lang === "ar" ? "flex-end" : "flex-start",
           }}
         >
-          <motion.h1
-            variants={fadeInUp}
-            style={{
-              fontSize: "2.5rem",
-              fontWeight: "bold",
-              color: dark ? "#fff" : "#111827",
-            }}
-          >
-            {content[lang].heroTitle}
-          </motion.h1>
+          <h1>{content[lang].heroTitle}</h1>
+          <p>{content[lang].heroDesc}</p>
 
-          <motion.p
-            variants={fadeInUp}
-            style={{
-              fontSize: "1.1rem",
-              maxWidth: "600px",
-              lineHeight: 1.6,
-              color: dark ? "#e5e7eb" : "#374151",
-            }}
-          >
-            {content[lang].heroDesc}
-          </motion.p>
-
-          <motion.ul
-            variants={fadeInUp}
-            style={{
-              display: "grid",
-              gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
-              gap: "8px",
-              color: "#3b82f6",
-              fontWeight: 500,
-            }}
-          >
-            {content[lang].features.map((feat, i) => (
-              <li key={i}>✔ {feat}</li>
+          <ul>
+            {content[lang].features.map((f, i) => (
+              <li key={i}>✔ {f}</li>
             ))}
-          </motion.ul>
+          </ul>
 
-          {/* ✅ الأزرار بعد التعديل */}
-          <motion.div
-            variants={fadeInUp}
-            style={{ display: "flex", gap: "16px", marginTop: "16px", flexWrap: "wrap" }}
-          >
-            <motion.div whileHover={{ scale: 1.1 }}>
-              <Link to="services" style={btnPrimary}>
-                {content[lang].btnServices}
-              </Link>
-            </motion.div>
+          {/* ✅ الأزرار الصح */}
+          <div style={{ display: "flex", gap: "10px", marginTop: "15px" }}>
+            <Link to="services" style={btnPrimary}>
+              {content[lang].btnServices}
+            </Link>
 
-            <motion.div whileHover={{ scale: 1.1 }}>
-              <Link to="contact" style={btnSecondary}>
-                {content[lang].btnContact}
-              </Link>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+            <Link to="contact" style={btnSecondary}>
+              {content[lang].btnContact}
+            </Link>
+          </div>
+        </div>
 
         {/* Right */}
-        <motion.div
-          variants={fadeInRight}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            order: isMobile ? 1 : 2,
-          }}
-        >
-          <motion.div
-            style={heroImage}
-            whileHover={{ scale: 1.1 }}
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
-          >
-            <img
-              src="/2.jpeg"
-              alt="Company"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                borderRadius: "50%",
-              }}
-            />
-          </motion.div>
-        </motion.div>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <img
+            src="/2.jpeg"
+            alt="hero"
+            style={{
+              width: "250px",
+              height: "250px",
+              borderRadius: "50%",
+              objectFit: "cover",
+              border: "4px solid #3b82f6",
+            }}
+          />
+        </div>
       </div>
     </motion.section>
   );
 }
 
-// Styles
 const btnPrimary = {
-  padding: "12px 24px",
-  backgroundColor: "#3b82f6",
+  padding: "10px 20px",
+  background: "#3b82f6",
   color: "#fff",
-  borderRadius: "50px",
+  borderRadius: "25px",
   textDecoration: "none",
 };
 
 const btnSecondary = {
-  padding: "12px 24px",
+  padding: "10px 20px",
   border: "2px solid #3b82f6",
   color: "#3b82f6",
-  borderRadius: "50px",
+  borderRadius: "25px",
   textDecoration: "none",
-};
-
-const heroImage = {
-  width: "300px",
-  height: "300px",
-  borderRadius: "50%",
-  border: "4px solid #3b82f6",
-  overflow: "hidden",
 };

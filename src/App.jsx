@@ -17,9 +17,9 @@ function AnimatedRoutes({ lang, dark }) {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageWrapper><Home lang={lang} dark={dark} /></PageWrapper>} />
-        <Route path="/services" element={<PageWrapper><Services lang={lang} dark={dark} /></PageWrapper>} />
-        <Route path="/projects" element={<PageWrapper><Projects lang={lang} dark={dark} /></PageWrapper>} />
-        <Route path="/contact" element={<PageWrapper><Contact lang={lang} dark={dark} /></PageWrapper>} />
+        <Route path="services" element={<PageWrapper><Services lang={lang} dark={dark} /></PageWrapper>} />
+        <Route path="projects" element={<PageWrapper><Projects lang={lang} dark={dark} /></PageWrapper>} />
+        <Route path="contact" element={<PageWrapper><Contact lang={lang} dark={dark} /></PageWrapper>} />
       </Routes>
       <Footer lang={lang} dark={dark} />
     </AnimatePresence>
