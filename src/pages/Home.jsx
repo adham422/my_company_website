@@ -114,7 +114,7 @@ export default function Home({ lang = "en", dark = false }) {
             }}
           >
             <img
-              src="https://i.ibb.co/5LTVrT8/2.jpg" // ضع رابط مباشر للصورة هنا
+              src="https://drive.google.com/file/d/1utuRD1Jy4ash4JsAYbWFGDSbZmCq_YlQ/view?usp=drive_link" 
               alt="hero"
               style={{
                 width: "100%",
