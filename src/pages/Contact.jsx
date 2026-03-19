@@ -20,7 +20,7 @@ export default function Contact({ lang = "ar", dark = true }) {
 
   const t = lang === "ar" ? text.ar : text.en;
   const whatsappNumber = "01123105749";
-  const defaultMessage = "Hello , In KingDom For Programming, We will reply about your Question through 24 hours";
+  const defaultMessage = "Hello, In KingDom For Programming, We will reply to your question within 24 hours";
 
   const openWhatsApp = (msg) => {
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg || defaultMessage)}`;
@@ -31,7 +31,7 @@ export default function Contact({ lang = "ar", dark = true }) {
     { icon: FaWhatsapp, link: `https://wa.me/${whatsappNumber}`, color: "#25D366" },
     { icon: FaYoutube, link: "https://www.youtube.com/@adhamhashem5303", color: "#FF0000" },
     { icon: FaEnvelope, link: `mailto:hashemadham64@gmail.com`, color: "#0EA5E9" },
-    { icon: FaLinkedin, link: "https://www.linkedin.com/in/adham-hashem-b39272239/", color: "#0A66C2" }
+    { icon: FaLinkedin, link: "https://www.linkedin.com/in/adham-hashem-b39272239/", color: "#0A66C2" },
   ];
 
   return (
@@ -40,21 +40,21 @@ export default function Contact({ lang = "ar", dark = true }) {
         background: dark ? "#030712" : "#ffffff",
         color: dark ? "#fff" : "#111",
         minHeight: "100vh",
-        padding: "60px 20px"
+        padding: "60px 20px",
       }}
     >
       <div style={{ maxWidth: "1100px", margin: "auto", textAlign: "center" }}>
-        <h1 style={{ fontSize: "2.5rem", marginBottom: "10px" }}>{t.title}</h1>
-        <p style={{ opacity: 0.7 }}>{t.desc}</p>
+        <h1 style={{ fontSize: "2.5rem", fontWeight: "bold", marginBottom: "10px" }}>{t.title}</h1>
+        <p style={{ fontSize: "1.125rem", opacity: 0.8 }}>{t.desc}</p>
 
-        {/* Social Links */}
+        {/* Social Icons Grid */}
         <div
           style={{
             display: "flex",
             justifyContent: "center",
             flexWrap: "wrap",
             gap: "30px",
-            marginTop: "40px"
+            marginTop: "50px",
           }}
         >
           {socialLinks.map((item, idx) => {
@@ -71,10 +71,10 @@ export default function Contact({ lang = "ar", dark = true }) {
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
-                  width: "120px",
-                  height: "120px",
+                  width: "130px",       // الدائرة الخارجية كبيرة زي ما كانت
+                  height: "130px",
                   borderRadius: "50%",
-                  background: dark ? "#111827" : "#f9fafb", // الدائرة الكبيرة للخارج
+                  background: dark ? "#111827" : "#f9fafb",
                   textDecoration: "none",
                   boxShadow: dark
                     ? "0 0 20px rgba(0,0,0,0.5)"
@@ -83,24 +83,21 @@ export default function Contact({ lang = "ar", dark = true }) {
                   transition: "0.3s",
                 }}
               >
-                {/* الدائرة الداخلية الملونة */}
+                {/* الدائرة الداخلية للأيقونة */}
                 <div
                   style={{
                     background: item.color,
                     width: "60px",
                     height: "60px",
-                    borderRadius: "50%", // دائري 100%
+                    borderRadius: "50%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     marginBottom: "12px",
-                    boxShadow:
-                      item.color === "#FF0000"
-                        ? "0 0 25px red"
-                        : "0 0 12px rgba(0,0,0,0.3)"
+                    boxShadow: "0 0 10px rgba(0,0,0,0.3)",
                   }}
                 >
-                  <Icon size={30} color="#fff" />
+                  <Icon size={28} color="#fff" />
                 </div>
                 <span style={{ fontWeight: "bold", color: dark ? "#fff" : "#111" }}>
                   {t.social[Object.keys(t.social)[idx]]}
@@ -112,14 +109,15 @@ export default function Contact({ lang = "ar", dark = true }) {
 
         {/* Quick Questions */}
         <div style={{ marginTop: "60px" }}>
-          <h3>{lang === "ar" ? "اختر سؤالاً سريعاً:" : "Quick Questions:"}</h3>
+          <h3 style={{ fontWeight: "bold", marginBottom: "20px" }}>
+            {lang === "ar" ? "اختر سؤالاً سريعاً:" : "Quick Questions:"}
+          </h3>
           <div
             style={{
               display: "flex",
               flexWrap: "wrap",
               gap: "15px",
               justifyContent: "center",
-              marginTop: "20px"
             }}
           >
             {t.suggestions.map((s, i) => (
@@ -127,6 +125,7 @@ export default function Contact({ lang = "ar", dark = true }) {
                 key={i}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => openWhatsApp(s)}
                 style={{
                   padding: "12px 20px",
                   borderRadius: "12px",
@@ -135,9 +134,9 @@ export default function Contact({ lang = "ar", dark = true }) {
                   color: "#fff",
                   fontWeight: "bold",
                   border: "none",
-                  boxShadow: "0 0 10px rgba(99,102,241,0.5)"
+                  boxShadow: "0 0 10px rgba(99,102,241,0.5)",
+                  transition: "0.3s",
                 }}
-                onClick={() => openWhatsApp(s)}
               >
                 {s}
               </motion.button>
