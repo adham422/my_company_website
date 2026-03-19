@@ -136,7 +136,7 @@ export default function Home({ lang = "en", dark = false }) {
             }}
           >
             <img
-              src="https://images-platform.99static.com/1U3bpD80nwXJ5zkaFqPXAYA4LoY%3D/2x0%3A2000x1998/fit-in/99designs-contests-attachments/144/144407/attachment_144407184"
+              src="https://seeklogo.com/vector-logo/371353/kingdom-lion"
               alt="Kingdom Logo"
               style={{
                 width: "80%",
