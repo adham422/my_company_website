@@ -20,7 +20,7 @@ export default function Contact({ lang = "ar", dark = true }) {
 
   const t = lang === "ar" ? text.ar : text.en;
 
-  const whatsappNumber = "01123105749";
+  const whatsappNumber = "+201123105749";
   const defaultMessage = "Hello, In KingDom For Programming, We will reply within 24 hours";
 
   const openWhatsApp = (msg) => {

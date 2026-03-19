@@ -11,15 +11,6 @@ const servicesData = [
     icon: "🛠️",
   },
   {
-    title_ar: "تطوير مواقع ويب",
-    title_en: "Web Development",
-    description_ar: "تصميم وبرمجة مواقع متجاوبة وحديثة باستخدام أحدث التقنيات.",
-    description_en: "Designing and developing responsive modern websites using latest technologies.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-    link: "/web-development",
-    icon: "🌐",
-  },
-  {
     title_ar: "تطوير تطبيقات موبايل",
     title_en: "Mobile App Development",
     description_ar: "إنشاء تطبيقات Android و iOS بجودة عالية وسرعة تنفيذ.",
@@ -27,6 +18,15 @@ const servicesData = [
     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c",
     link: "https://youtu.be/alxSqW_05eM?si=KucvMWJ3KRB9Rtlw",
     icon: "📱",
+  },
+   {
+    title_ar: "تطوير مواقع ويب",
+    title_en: "Web Development",
+    description_ar: "تصميم وبرمجة مواقع متجاوبة وحديثة باستخدام أحدث التقنيات.",
+    description_en: "Designing and developing responsive modern websites using latest technologies.",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    link: "https://youtu.be/v-FZHW4zQuU?si=LAPk32Wr21KKtoEM",
+    icon: "🌐",
   },
   {
     title_ar: "تصميم واجهات UI/UX",
