@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import heroImg from "../image/2.jpeg";
 
 export default function Home({ lang = "en", dark = false }) {
   const content = {
@@ -54,7 +55,7 @@ export default function Home({ lang = "en", dark = false }) {
     gap: "32px",
     alignItems: "center",
   };
-  const isMobile = window.innerWidth <= 768; 
+  const isMobile = window.innerWidth <= 768;
 
   return (
     <motion.section
@@ -163,7 +164,7 @@ export default function Home({ lang = "en", dark = false }) {
             transition={{ duration: 4, repeat: Infinity }}
           >
             <motion.img
-              src="/2.jpeg"
+              src={heroImg}
               alt="Company"
               style={{
                 width: "100%",
