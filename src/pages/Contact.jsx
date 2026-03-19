@@ -37,7 +37,7 @@ export default function Contact({ lang = "ar", dark = true }) {
   return (
     <section
       style={{
-        background: dark ? "#030712" : "#ffffff",
+        background: dark ? "#030712" : "#f5f5f5",
         color: dark ? "#fff" : "#111",
         minHeight: "100vh",
         padding: "60px 20px",
@@ -45,7 +45,7 @@ export default function Contact({ lang = "ar", dark = true }) {
     >
       <div style={{ maxWidth: "1100px", margin: "auto", textAlign: "center" }}>
         <h1 style={{ fontSize: "2.5rem", fontWeight: "bold", marginBottom: "10px" }}>{t.title}</h1>
-        <p style={{ fontSize: "1.125rem", opacity: 0.8 }}>{t.desc}</p>
+        <p style={{ fontSize: "1.125rem", opacity: 0.85 }}>{t.desc}</p>
 
         {/* Social Icons Grid */}
         <div
@@ -53,7 +53,7 @@ export default function Contact({ lang = "ar", dark = true }) {
             display: "flex",
             justifyContent: "center",
             flexWrap: "wrap",
-            gap: "30px",
+            gap: "40px",
             marginTop: "50px",
           }}
         >
@@ -62,7 +62,7 @@ export default function Contact({ lang = "ar", dark = true }) {
             return (
               <motion.a
                 key={idx}
-                whileHover={{ scale: 1.1, rotate: 5 }}
+                whileHover={{ scale: 1.15, rotate: 5, boxShadow: `0 0 25px ${item.color}` }}
                 href={item.link}
                 target="_blank"
                 rel="noreferrer"
@@ -71,33 +71,33 @@ export default function Contact({ lang = "ar", dark = true }) {
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
-                  width: "130px",       // الدائرة الخارجية كبيرة زي ما كانت
-                  height: "130px",
+                  width: "140px",
+                  height: "140px",
                   borderRadius: "50%",
-                  background: dark ? "#111827" : "#f9fafb",
+                  background: dark ? "#111827" : "#fff",
                   textDecoration: "none",
+                  border: `3px solid ${item.color}`,
                   boxShadow: dark
-                    ? "0 0 20px rgba(0,0,0,0.5)"
-                    : "0 5px 15px rgba(0,0,0,0.1)",
-                  border: `2px solid ${item.color}`,
-                  transition: "0.3s",
+                    ? `0 5px 25px rgba(0,0,0,0.6), 0 0 15px ${item.color}50`
+                    : `0 5px 15px rgba(0,0,0,0.1), 0 0 12px ${item.color}33`,
+                  transition: "all 0.3s ease",
                 }}
               >
-                {/* الدائرة الداخلية للأيقونة */}
+                {/* Inner circle */}
                 <div
                   style={{
                     background: item.color,
-                    width: "60px",
-                    height: "60px",
+                    width: "65px",
+                    height: "65px",
                     borderRadius: "50%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     marginBottom: "12px",
-                    boxShadow: "0 0 10px rgba(0,0,0,0.3)",
+                    boxShadow: `0 0 12px ${item.color}88`,
                   }}
                 >
-                  <Icon size={28} color="#fff" />
+                  <Icon size={30} color="#fff" />
                 </div>
                 <span style={{ fontWeight: "bold", color: dark ? "#fff" : "#111" }}>
                   {t.social[Object.keys(t.social)[idx]]}
@@ -123,19 +123,19 @@ export default function Contact({ lang = "ar", dark = true }) {
             {t.suggestions.map((s, i) => (
               <motion.button
                 key={i}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.07, boxShadow: "0 0 15px #6366f1" }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => openWhatsApp(s)}
                 style={{
-                  padding: "12px 20px",
-                  borderRadius: "12px",
+                  padding: "12px 22px",
+                  borderRadius: "14px",
                   cursor: "pointer",
                   background: "#6366f1",
                   color: "#fff",
                   fontWeight: "bold",
                   border: "none",
-                  boxShadow: "0 0 10px rgba(99,102,241,0.5)",
-                  transition: "0.3s",
+                  boxShadow: "0 0 10px rgba(99,102,241,0.6)",
+                  transition: "all 0.3s ease",
                 }}
               >
                 {s}
