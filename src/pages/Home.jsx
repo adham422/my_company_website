@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function Home({ lang = "en", dark = false }) {
   const content = {
     ar: {
-      heroTitle: "شركة تطوير مواقع ويب و برمجة احترافية",
+      heroTitle: "شركة تطوير مواقع ويب و برمجة إحترافية",
       heroDesc:
         "نحن نقدم حلول متكاملة لتصميم وبرمجة المواقع الإلكترونية، تطوير المشاريع الرقمية، وخدمات سلة نت.",
       features: [
