@@ -73,8 +73,8 @@ export default function Contact({ lang = "ar", dark = true }) {
                   justifyContent: "center",
                   width: "120px",
                   height: "120px",
-                  borderRadius: "50%", // دايرة كاملة
-                  background: dark ? "#111827" : "#f9fafb",
+                  borderRadius: "50%",
+                  background: dark ? "#111827" : "#f9fafb", // الدائرة الكبيرة للخارج
                   textDecoration: "none",
                   boxShadow: dark
                     ? "0 0 20px rgba(0,0,0,0.5)"
@@ -83,12 +83,13 @@ export default function Contact({ lang = "ar", dark = true }) {
                   transition: "0.3s",
                 }}
               >
+                {/* الدائرة الداخلية الملونة */}
                 <div
                   style={{
                     background: item.color,
                     width: "60px",
                     height: "60px",
-                    borderRadius: "50%", // دايرة كاملة
+                    borderRadius: "50%", // دائري 100%
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
