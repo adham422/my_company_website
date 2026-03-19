@@ -62,7 +62,7 @@ export default function Contact({ lang = "ar", dark = true }) {
             return (
               <motion.a
                 key={idx}
-                whileHover={{ scale: 1.15, rotate: 5, boxShadow: `0 0 25px ${item.color}` }}
+                whileHover={{ scale: 1.12, rotate: 3, boxShadow: `0 0 25px ${item.color}` }}
                 href={item.link}
                 target="_blank"
                 rel="noreferrer"
@@ -73,17 +73,18 @@ export default function Contact({ lang = "ar", dark = true }) {
                   justifyContent: "center",
                   width: "140px",
                   height: "140px",
-                  borderRadius: "50%",
+                  borderRadius: "24px", // مستطيل مستدير قليلاً
                   background: dark ? "#111827" : "#fff",
                   textDecoration: "none",
-                  border: `3px solid ${item.color}`,
+                  border: `2px solid ${item.color}`,
                   boxShadow: dark
-                    ? `0 5px 25px rgba(0,0,0,0.6), 0 0 15px ${item.color}50`
+                    ? `0 5px 25px rgba(0,0,0,0.5), 0 0 15px ${item.color}50`
                     : `0 5px 15px rgba(0,0,0,0.1), 0 0 12px ${item.color}33`,
                   transition: "all 0.3s ease",
+                  padding: "15px",
                 }}
               >
-                {/* Inner circle */}
+                {/* الدائرة الداخلية للأيقونة فقط */}
                 <div
                   style={{
                     background: item.color,
