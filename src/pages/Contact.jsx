@@ -3,7 +3,6 @@ import { FaWhatsapp, FaYoutube, FaEnvelope, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 export default function Contact({ lang = "ar", dark = true }) {
-
   const text = {
     ar: {
       title: "تواصل معنا",
@@ -74,9 +73,8 @@ export default function Contact({ lang = "ar", dark = true }) {
                   justifyContent: "center",
                   width: "120px",
                   height: "120px",
-                  borderRadius: "50%",
+                  borderRadius: "50%", // دايرة كاملة
                   background: dark ? "#111827" : "#f9fafb",
-                  color: "#fff",
                   textDecoration: "none",
                   boxShadow: dark
                     ? "0 0 20px rgba(0,0,0,0.5)"
@@ -90,7 +88,7 @@ export default function Contact({ lang = "ar", dark = true }) {
                     background: item.color,
                     width: "60px",
                     height: "60px",
-                    borderRadius: "50%",
+                    borderRadius: "50%", // دايرة كاملة
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
