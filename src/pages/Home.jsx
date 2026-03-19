@@ -1,3 +1,4 @@
+// Home.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -42,6 +43,9 @@ export default function Home({ lang = "en", dark = false }) {
         alignItems: "center",
         justifyContent: "center",
         padding: "24px",
+        fontFamily: "'Poppins', sans-serif",
+        background: dark ? "#030712" : "#f9f9f9",
+        color: dark ? "#fff" : "#111",
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -56,7 +60,10 @@ export default function Home({ lang = "en", dark = false }) {
         }}
       >
         {/* Left Column: Content */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, x: lang === "ar" ? 50 : -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
           style={{
             display: "flex",
             flexDirection: "column",
@@ -100,30 +107,45 @@ export default function Home({ lang = "en", dark = false }) {
               {content[lang].btnContact}
             </Link>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Right Column: Hero Image */}
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        {/* Right Column: Kingdom Logo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <div
             style={{
-              width: "250px",
-              height: "250px",
+              width: isMobile ? "200px" : "250px",
+              height: isMobile ? "200px" : "250px",
               borderRadius: "50%",
-              border: "4px solid #3b82f6",
               overflow: "hidden",
+              border: "4px solid #3b82f6",
+              boxShadow: "0 15px 35px rgba(0,0,0,0.4)",
+              background: "#fff",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              transition: "transform 0.3s ease",
             }}
           >
             <img
-              src="https://drive.google.com/file/d/1utuRD1Jy4ash4JsAYbWFGDSbZmCq_YlQ/view?usp=drive_link" 
-              alt="hero"
+              src="https://images-platform.99static.com/1U3bpD80nwXJ5zkaFqPXAYA4LoY%3D/2x0%3A2000x1998/fit-in/99designs-contests-attachments/144/144407/attachment_144407184"
+              alt="Kingdom Logo"
               style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
+                width: "80%",
+                height: "80%",
+                objectFit: "contain",
               }}
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </motion.section>
   );
@@ -137,6 +159,7 @@ const btnPrimary = {
   textDecoration: "none",
   fontWeight: 600,
   transition: "all 0.3s ease",
+  boxShadow: "0 5px 15px rgba(59,130,246,0.4)",
 };
 
 const btnSecondary = {
