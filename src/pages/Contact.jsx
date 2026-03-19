@@ -23,7 +23,7 @@ export default function Contact({ lang = "ar", dark = true }) {
   const t = lang === "ar" ? text.ar : text.en;
 
   const whatsappNumber = "01123105749";
-  const defaultMessage = "Hello , In KingDom For Programming, We will reply about your Question through 24 hours";
+  const defaultMessage = "Hello, In KingDom For Programming, We will reply about your Question within 24 hours";
 
   const openWhatsApp = (msg) => {
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg || defaultMessage)}`;
@@ -42,21 +42,34 @@ export default function Contact({ lang = "ar", dark = true }) {
     <section
       className="contact-page"
       style={{
-        background: dark ? "#030712" : "#ffffff",
+        background: dark ? "#030712" : "#f9f9f9",
         color: dark ? "#fff" : "#111",
         minHeight: "100vh",
-        padding: "60px 20px"
+        padding: "60px 20px",
+        fontFamily: "'Poppins', sans-serif",
       }}
     >
       <div className="container" style={{ maxWidth: "1100px", margin: "auto", textAlign: "center" }}>
         
-        <h1 className="title" style={{ fontSize: "2.5rem", marginBottom: "10px" }}>
+        <motion.h1 
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="title" 
+          style={{ fontSize: "3rem", marginBottom: "10px", fontWeight: "700", letterSpacing: "1px" }}
+        >
           {t.title}
-        </h1>
+        </motion.h1>
 
-        <p className="desc" style={{ opacity: 0.7 }}>
+        <motion.p 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.8 }}
+          transition={{ delay: 0.3, duration: 0.7 }}
+          className="desc" 
+          style={{ fontSize: "1.1rem", lineHeight: "1.8", color: dark ? "#ccc" : "#555" }}
+        >
           {t.desc}
-        </p>
+        </motion.p>
 
         {/* Social Links */}
         <div
@@ -64,8 +77,8 @@ export default function Contact({ lang = "ar", dark = true }) {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
-            gap: "20px",
-            marginTop: "40px"
+            gap: "25px",
+            marginTop: "50px"
           }}
         >
           {socialLinks.map((item, idx) => {
@@ -73,7 +86,8 @@ export default function Contact({ lang = "ar", dark = true }) {
             return (
               <motion.a
                 key={idx}
-                whileHover={{ scale: 1.1, rotate: 1 }}
+                whileHover={{ scale: 1.15, rotate: [0, 5, -5, 0], transition: { duration: 0.5 } }}
+                whileTap={{ scale: 0.95 }}
                 href={item.link}
                 target="_blank"
                 rel="noreferrer"
@@ -81,34 +95,31 @@ export default function Contact({ lang = "ar", dark = true }) {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  padding: "25px",
-                  borderRadius: "16px",
-                  background: dark ? "#111827" : "#f9fafb",
+                  padding: "30px",
+                  borderRadius: "20px",
+                  background: dark ? "#111827" : "#fff",
                   color: dark ? "#fff" : "#111",
                   textDecoration: "none",
-                  border: "1px solid #1f2937",
-                  transition: "0.3s",
+                  border: dark ? "1px solid #1f2937" : "1px solid #e2e8f0",
                   boxShadow: dark
-                    ? "0 0 20px rgba(0,0,0,0.5)"
-                    : "0 5px 15px rgba(0,0,0,0.1)"
+                    ? "0 15px 30px rgba(0,0,0,0.5)"
+                    : "0 10px 25px rgba(0,0,0,0.1)",
+                  transition: "0.3s all ease"
                 }}
               >
                 <div
                   style={{
                     background: item.color,
-                    padding: "14px",
+                    padding: "16px",
                     borderRadius: "50%",
-                    marginBottom: "12px",
-                    boxShadow:
-                      item.color === "#FF0000"
-                        ? "0 0 25px red"
-                        : "0 0 10px rgba(0,0,0,0.3)"
+                    marginBottom: "15px",
+                    boxShadow: `0 0 20px ${item.color}`,
                   }}
                 >
-                  <Icon size={30} color="#fff" />
+                  <Icon size={32} color="#fff" />
                 </div>
 
-                <span style={{ fontWeight: "bold" }}>
+                <span style={{ fontWeight: "700", fontSize: "1rem" }}>
                   {t.social[Object.keys(t.social)[idx]]}
                 </span>
               </motion.a>
@@ -117,8 +128,13 @@ export default function Contact({ lang = "ar", dark = true }) {
         </div>
 
         {/* Quick Questions */}
-        <div style={{ marginTop: "60px" }}>
-          <h3>
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.7 }}
+          style={{ marginTop: "70px" }}
+        >
+          <h3 style={{ marginBottom: "20px", fontWeight: "600" }}>
             {lang === "ar" ? "اختر سؤالاً سريعاً:" : "Quick Questions:"}
           </h3>
 
@@ -126,25 +142,25 @@ export default function Contact({ lang = "ar", dark = true }) {
             style={{
               display: "flex",
               flexWrap: "wrap",
-              gap: "15px",
+              gap: "18px",
               justifyContent: "center",
-              marginTop: "20px"
             }}
           >
             {t.suggestions.map((s, i) => (
               <motion.button
                 key={i}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.08, backgroundColor: "#4f46e5" }}
                 whileTap={{ scale: 0.95 }}
                 style={{
-                  padding: "12px 20px",
-                  borderRadius: "12px",
+                  padding: "14px 24px",
+                  borderRadius: "18px",
                   cursor: "pointer",
                   background: "#6366f1",
                   color: "#fff",
-                  fontWeight: "bold",
+                  fontWeight: "600",
                   border: "none",
-                  boxShadow: "0 0 10px rgba(99,102,241,0.5)"
+                  boxShadow: "0 0 15px rgba(99,102,241,0.5)",
+                  transition: "all 0.3s ease"
                 }}
                 onClick={() => openWhatsApp(s)}
               >
@@ -152,7 +168,7 @@ export default function Contact({ lang = "ar", dark = true }) {
               </motion.button>
             ))}
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>
