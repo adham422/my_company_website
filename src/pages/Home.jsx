@@ -75,13 +75,13 @@ export default function Home({ lang = "en", dark = false }) {
             ))}
           </ul>
 
-          {/* ✅ الأزرار الصح */}
+          {/* ✅ نفس طريقة الهيدر بالظبط */}
           <div style={{ display: "flex", gap: "10px", marginTop: "15px" }}>
-            <Link to="services" style={btnPrimary}>
+            <Link to="/services" style={btnPrimary}>
               {content[lang].btnServices}
             </Link>
 
-            <Link to="contact" style={btnSecondary}>
+            <Link to="/contact" style={btnSecondary}>
               {content[lang].btnContact}
             </Link>
           </div>

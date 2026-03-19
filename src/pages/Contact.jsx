@@ -34,7 +34,7 @@ export default function Contact({ lang = "ar", dark = true }) {
     { icon: FaWhatsapp, link: `https://wa.me/${whatsappNumber}`, color: "#25D366" },
     { icon: FaYoutube, link: "https://www.youtube.com/@adhamhashem5303", color: "#FF0000" },
     { icon: FaEnvelope, link: `mailto:hashemadham64@gmail.com`, color: "#0EA5E9" },
-    { icon: FaTelegram, link: "t.me/ADHAM_ShOoma", color: "#0088cc" },
+    // { icon: FaTelegram, link: "t.me/ADHAM_ShOoma", color: "#0088cc" },
     { icon: FaLinkedin, link: "https://www.linkedin.com/in/adham-hashem-b39272239/", color: "#0A66C2" }
   ];
 
