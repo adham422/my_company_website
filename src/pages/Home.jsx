@@ -1,4 +1,4 @@
-// Home.jsx
+// src/pages/Home.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -33,141 +33,187 @@ export default function Home({ lang = "en", dark = false }) {
     },
   };
 
-  const isMobile = window.innerWidth <= 768;
+  // Motion Variants
+  const container = { hidden: {}, show: { transition: { staggerChildren: 0.2 } } };
+  const fadeInUp = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.8 } } };
+  const fadeInLeft = { hidden: { opacity: 0, x: -30 }, show: { opacity: 1, x: 0, transition: { duration: 0.8 } } };
+  const fadeInRight = { hidden: { opacity: 0, x: 30 }, show: { opacity: 1, x: 0, transition: { duration: 0.8 } } };
+
+  // Responsive Styles
+  const gridStyle = {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    maxWidth: "1200px",
+    width: "100%",
+    gap: "48px",
+    alignItems: "center",
+  };
+  const mobileGridStyle = {
+    display: "grid",
+    gridTemplateColumns: "1fr",
+    gap: "32px",
+    alignItems: "center",
+  };
+  const isMobile = window.innerWidth <= 768; 
 
   return (
     <motion.section
       style={{
         minHeight: "100vh",
+        width: "100vw",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         padding: "24px",
-        fontFamily: "'Poppins', sans-serif",
-        background: dark ? "#030712" : "#f9f9f9",
-        color: dark ? "#fff" : "#111",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      variants={container}
+      initial="hidden"
+      animate="show"
     >
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
-          gap: "40px",
-          maxWidth: "1100px",
-          width: "100%",
-        }}
-      >
+      <div style={isMobile ? mobileGridStyle : gridStyle}>
         {/* Left Column: Content */}
         <motion.div
-          initial={{ opacity: 0, x: lang === "ar" ? 50 : -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          variants={fadeInLeft}
           style={{
             display: "flex",
             flexDirection: "column",
             gap: "16px",
-            textAlign: lang === "ar" ? "right" : "left",
+            justifyContent: "center",
             alignItems: lang === "ar" ? "flex-end" : "flex-start",
+            textAlign: lang === "ar" ? "right" : "left",
+            order: isMobile ? 2 : 1,
           }}
         >
-          <h1 style={{ fontSize: "2.8rem", fontWeight: "bold", lineHeight: 1.2 }}>
+          <motion.h1
+            variants={fadeInUp}
+            style={{
+              fontSize: "2.5rem",
+              fontWeight: "bold",
+              color: dark ? "#ffffff" : "#111827",
+            }}
+          >
             {content[lang].heroTitle}
-          </h1>
-          <p style={{ fontSize: "1.15rem", opacity: 0.8, maxWidth: "600px" }}>
-            {content[lang].heroDesc}
-          </p>
+          </motion.h1>
 
-          {/* Features List */}
-          <ul
+          <motion.p
+            variants={fadeInUp}
+            style={{
+              fontSize: "1.125rem",
+              maxWidth: "600px",
+              lineHeight: 1.6,
+              color: dark ? "#e5e7eb" : "#374151",
+            }}
+          >
+            {content[lang].heroDesc}
+          </motion.p>
+
+          <motion.ul
+            variants={fadeInUp}
             style={{
               display: "grid",
               gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
               gap: "8px",
               color: "#3b82f6",
               fontWeight: 500,
-              padding: 0,
-              listStyle: "none",
             }}
           >
-            {content[lang].features.map((f, i) => (
-              <li key={i} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ color: "#3b82f6" }}>✔</span> {f}
-              </li>
+            {content[lang].features.map((feat, i) => (
+              <li key={i}>✔ {feat}</li>
             ))}
-          </ul>
+          </motion.ul>
 
-          {/* Buttons */}
-          <div style={{ display: "flex", gap: "12px", marginTop: "16px", flexWrap: "wrap" }}>
-            <Link to="/services" style={btnPrimary}>
-              {content[lang].btnServices}
-            </Link>
-            <Link to="/contact" style={btnSecondary}>
-              {content[lang].btnContact}
-            </Link>
-          </div>
+          {/* Buttons with hover animation */}
+          <motion.div
+            variants={fadeInUp}
+            style={{ display: "flex", gap: "16px", marginTop: "16px", flexWrap: "wrap" }}
+          >
+            <motion.div whileHover={{ scale: 1.1, boxShadow: "0 5px 15px rgba(0,0,0,0.3)" }} transition={{ type: "spring", stiffness: 300 }}>
+              <Link to="/services" style={btnPrimary(dark)}>
+                {content[lang].btnServices}
+              </Link>
+            </motion.div>
+
+            <motion.div whileHover={{ scale: 1.1, boxShadow: "0 5px 15px rgba(0,0,0,0.3)" }} transition={{ type: "spring", stiffness: 300 }}>
+              <Link to="/contact" style={btnSecondary(dark)}>
+                {content[lang].btnContact}
+              </Link>
+            </motion.div>
+          </motion.div>
         </motion.div>
 
-        {/* Right Column: Kingdom Logo */}
+        {/* Right Column: Hero Image */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
+          variants={fadeInRight}
           style={{
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
+            order: isMobile ? 1 : 2,
           }}
         >
-          <div
-            style={{
-              width: isMobile ? "200px" : "250px",
-              height: isMobile ? "200px" : "250px",
-              borderRadius: "50%",
-              overflow: "hidden",
-              border: "4px solid #3b82f6",
-              boxShadow: "0 15px 35px rgba(0,0,0,0.4)",
-              background: "#fff",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              transition: "transform 0.3s ease",
+          <motion.div
+            style={heroImage}
+            whileHover={{
+              scale: 1.1,
+              rotate: 3,
+              boxShadow: "0 0 40px rgba(59,130,246,0.6)",
             }}
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 4, repeat: Infinity }}
           >
-            <img
-              src="https://seeklogo.com/vector-logo/371353/kingdom-lion"
-              alt="Kingdom Logo"
+            <motion.img
+              src="/2.jpeg"
+              alt="Company"
               style={{
-                width: "80%",
-                height: "80%",
-                objectFit: "contain",
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: "50%",
               }}
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1 }}
             />
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </motion.section>
   );
 }
 
-const btnPrimary = {
+// Button Styles
+const btnPrimary = (dark) => ({
   padding: "12px 24px",
-  background: "#3b82f6",
-  color: "#fff",
+  backgroundColor: "#3b82f6",
+  color: "#ffffff",
+  fontWeight: 600,
   borderRadius: "50px",
   textDecoration: "none",
-  fontWeight: 600,
+  display: "inline-block",
+  cursor: "pointer",
   transition: "all 0.3s ease",
-  boxShadow: "0 5px 15px rgba(59,130,246,0.4)",
-};
+});
 
-const btnSecondary = {
+const btnSecondary = (dark) => ({
   padding: "12px 24px",
-  border: "2px solid #3b82f6",
+  backgroundColor: "transparent",
   color: "#3b82f6",
-  borderRadius: "50px",
-  textDecoration: "none",
   fontWeight: 600,
+  borderRadius: "50px",
+  border: `2px solid #3b82f6`,
+  textDecoration: "none",
+  display: "inline-block",
+  cursor: "pointer",
   transition: "all 0.3s ease",
+});
+
+// Hero Image Styles
+const heroImage = {
+  width: "300px",
+  height: "300px",
+  borderRadius: "50%",
+  border: "4px solid #3b82f6",
+  overflow: "hidden",
+  boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
 };
