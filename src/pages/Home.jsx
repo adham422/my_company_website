@@ -90,7 +90,7 @@ export default function Home({ lang = "en", dark = false }) {
         {/* Right */}
         <div style={{ display: "flex", justifyContent: "center" }}>
           <img
-            src="https://drive.google.com/drive/home?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto"
+            src="https://drive.google.com/file/d/1utuRD1Jy4ash4JsAYbWFGDSbZmCq_YlQ/view?usp=drive_link"
             alt="hero"
             style={{
               width: "250px",
