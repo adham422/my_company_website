@@ -57,7 +57,7 @@ export default function Contact({ lang = "ar", dark = true }) {
           {t.title}
         </motion.h1>
 
-        {/* Desc */}
+        {/* Description */}
         <motion.p 
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.8 }}
@@ -67,13 +67,13 @@ export default function Contact({ lang = "ar", dark = true }) {
           {t.desc}
         </motion.p>
 
-        {/* Social Icons (NEW STYLE 🔥) */}
+        {/* Social Icons */}
         <div
           style={{
             display: "flex",
             justifyContent: "center",
             flexWrap: "wrap",
-            gap: "30px",
+            gap: "35px",
             marginTop: "60px"
           }}
         >
@@ -86,15 +86,14 @@ export default function Contact({ lang = "ar", dark = true }) {
                 target="_blank"
                 rel="noreferrer"
                 whileHover={{
-                  scale: 1.15,
-                  rotate: 3,
-                  boxShadow: `0 0 40px ${item.color}`
+                  scale: 1.1,
+                  boxShadow: `0 0 35px ${item.color}`
                 }}
-                whileTap={{ scale: 0.9 }}
+                whileTap={{ scale: 0.95 }}
                 style={{
-                  width: "130px",
-                  height: "130px",
-                  borderRadius: "50%",
+                  width: "140px",
+                  height: "140px",
+                  borderRadius: "10px",
                   border: `3px solid ${item.color}`,
                   display: "flex",
                   alignItems: "center",
@@ -103,29 +102,30 @@ export default function Contact({ lang = "ar", dark = true }) {
                   boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
                   textDecoration: "none",
                   position: "relative",
-                  overflow: "hidden"
+                  overflow: "hidden",
+                  padding: "5px"
                 }}
               >
                 <motion.div
                   animate={{
-                    y: [0, -10, 0],
+                    y: [0, -8, 0],
                     boxShadow: [
                       `0 0 10px ${item.color}`,
-                      `0 0 25px ${item.color}`,
+                      `0 0 20px ${item.color}`,
                       `0 0 10px ${item.color}`
                     ]
                   }}
                   transition={{ duration: 3, repeat: Infinity }}
                   style={{
                     background: item.color,
-                    padding: "20px",
+                    padding: "18px",
                     borderRadius: "50%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center"
                   }}
                 >
-                  <Icon size={30} color="#fff" />
+                  <Icon size={28} color="#fff" />
                 </motion.div>
               </motion.a>
             );
