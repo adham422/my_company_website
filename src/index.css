@@ -469,11 +469,11 @@ header.light {
   transition: all 0.3s ease;
 }
 
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  background-color: #1ebe5d;
+.whatsapp-float i {
+  color: white; /* المهم هنا */
+  font-size: 30px;
 }
-/* Hover */
+
 .whatsapp-float:hover {
   transform: scale(1.1);
   background-color: #1ebe5d;

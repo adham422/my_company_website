@@ -1,18 +1,19 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
-import ser1 from "../images/Artboard 1.jpeg";
-import ser2 from "../images/Artboard 2.jpeg";
-import ser3 from "../images/Artboard 3.jpeg";
-import ser4 from "../images/Artboard 4.jpeg";
-import ser5 from "../images/Artboard 5.jpeg";
-import ser6 from "../images/Artboard 6.jpeg";
-import ser7 from "../images/Artboard 7.jpeg";
-import ser8 from "../images/Artboard 8.jpeg";
-import ser9 from "../images/Artboard 9.jpeg";
-import ser10 from "../images/Artboard 10.jpeg";
-import ser11 from "../images/Artboard 11.jpeg";
-import { video } from "framer-motion/client";
+import ser1 from "../images/Artboard1.jpeg";
+import ser2 from "../images/Artboard2.jpeg";
+import ser3 from "../images/Artboard3.jpeg";
+import ser4 from "../images/Artboard4.jpeg";
+import ser5 from "../images/Artboard5.jpeg";
+import ser6 from "../images/Artboard6.jpeg";
+import ser7 from "../images/Artboard7.jpeg";
+import ser8 from "../images/Artboard8.jpeg";
+import ser9 from "../images/Artboard9.jpeg";
+import ser10 from "../images/Artboard10.jpeg";
+import ser11 from "../images/Artboard11.jpeg";
+import workVideo from "../video/work.mp4";
+
 const servicesData = [
   {
     title_ar: "إنشاء متجر إلكتروني ",
@@ -41,7 +42,7 @@ We ensure a smooth and fast user experience across all devices.
 Our goal is to help you launch and start selling immediately with zero hassle.`,
     
     image: ser1,
-    video: "https://www.youtube.com/embed/1hHzeRxnpa8",
+    video: workVideo,
     icon: "🛒",
   },
   
@@ -68,7 +69,7 @@ Optimized for websites, apps, and social media platforms.
 Our goal is to give your business a strong and trustworthy first impression.`,
     
     image: ser2,
-    video: "https://www.youtube.com/embed/v-FZHW4zQuU",
+    video: workVideo,
     icon: "🎨",
   },
   
@@ -95,7 +96,7 @@ We organize category visuals to enhance browsing experience.
 We help turn visitors into actual buyers.`,
     
     image: ser3,
-    video: "https://www.youtube.com/embed/v-FZHW4zQuU",
+    video: workVideo,
     icon: "🖼️",
   },
   
@@ -122,7 +123,7 @@ Improve your Google visibility without paid ads.
 Help you reach new customers organically and consistently.`,
     
     image: ser4,
-    video: "https://www.youtube.com/embed/v-FZHW4zQuU",
+    video: workVideo,
     icon: "📈",
   },
   
@@ -149,7 +150,7 @@ Make your store completely unique.
 Focus on both design quality and user experience.`,
     
     image: ser5,
-    video: "https://www.youtube.com/embed/XtcB4cGW2kQ",
+    video: workVideo,
     icon: "💻",
   },
   
@@ -176,7 +177,7 @@ Add interactivity to keep users engaged longer.
 All aimed at increasing your sales.`,
     
     image: ser6,
-    video: "https://www.youtube.com/embed/eaDug7uG6Ik",
+    video: workVideo,
     icon: "⚙️",
   },
   
@@ -203,7 +204,7 @@ Perfect for B2B and partnerships.
 Helps you build trust with big clients.`,
     
     image: ser7,
-    video: "https://www.youtube.com/embed/v-FZHW4zQuU",
+    video: workVideo,
     icon: "📄",
   },
   
@@ -230,7 +231,7 @@ Convert engagement into real sales.
 Keep your accounts working for you 24/7.`,
     
     image: ser8,
-    video: "https://www.youtube.com/embed/v-FZHW4zQuU",
+    video: workVideo,
     icon: "📱",
   },
   
@@ -257,7 +258,7 @@ Make your link simple and memorable.
 Boost your brand credibility significantly.`,
     
     image: ser9,
-    video: "https://www.youtube.com/embed/v-FZHW4zQuU",
+    video: workVideo,
     icon: "🌐",
   },
   {
@@ -279,7 +280,7 @@ We cover multiple fields like programming, reports, and presentations.
 Our goal is to help you submit high-quality work while actually learning.`,
     
     image: ser10,
-    video: "https://www.youtube.com/embed/fsOz4JeHvl0",
+    video: workVideo,
     icon: "📚",
   },
   
@@ -302,7 +303,7 @@ We provide full explanation plus a ready-to-use presentation.
 Our goal is to make your project stand out and benefit you after graduation.`,
     
     image: ser11,
-    video: "https://www.youtube.com/embed/alxSqW_05eM",
+    video: workVideo,
     icon: "🎓",
   },
 ];
