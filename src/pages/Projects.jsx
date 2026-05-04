@@ -1,82 +1,91 @@
 // Projects.jsx
 import React from "react";
 import { motion } from "framer-motion";
-
+import image1 from "../images/project1.jfif";
+import image2 from "../images/project2.jfif";
+import image3 from "../images/project3.jfif";
+import image4 from "../images/project4.jfif";
+import image5 from "../images/project5.jfif";
+import image6 from "../images/project6.jfif";
+import image7 from "../images/project7.jfif";
+import image8 from "../images/project8.jfif";
+import image9 from "../images/project9.jfif";
+import image10 from "../images/project10.jfif";
+import image11 from "../images/project11.jfif";
 const projectData = [
   {
     name: { en: "Portfolio Website", ar: "موقع البورتفوليو" },
     desc: { en: "A modern personal portfolio to showcase skills and projects.", ar: "موقع شخصي حديث لعرض مهاراتي ومشاريعي بشكل احترافي." },
-    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    img: image1,
     link: "https://adham422.github.io/My_Protofile/",
   },
   {
     name: { en: "Admin Dashboard", ar: "داش بورد" },
     desc: { en: "Interactive dashboard to manage data, analytics, and system performance.", ar: "لوحة تحكم تفاعلية لإدارة البيانات وتحليل الأداء بسهولة." },
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+    img: image2,
     link: "https://adham422.github.io/admin_dashboard/",
   },
   {
     name: { en: "Dice Challenge", ar: "تحدي النرد" },
     desc: { en: "Fun dice game where players race to reach 100 points first.", ar: "لعبة نرد ممتعة يتنافس فيها اللاعبون للوصول إلى 100 نقطة أولاً." },
-    img: "https://images.unsplash.com/photo-1606167668584-78701c57f13d",
+    img: image3,
     link: "https://adham422.github.io/My_Protofile/javascript%20game/task-game.html",
   },
   {
     name: { en: "CRUD System", ar: "سيستم إدارة محل" },
     desc: { en: "Full CRUD system to manage products, data, and operations efficiently.", ar: "نظام متكامل لإدارة المنتجات والبيانات (إضافة، تعديل، حذف)." },
-    img: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df",
+    img: image4,
     link: "https://adham422.github.io/product-system/",
   },
   {
     name: { en: "Movies Website", ar: "موقع أفلام" },
     desc: { en: "Browse and explore movies with a clean and responsive design.", ar: "تصفح الأفلام بسهولة من خلال واجهة جذابة وسريعة." },
-    img: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba",
+    img: image5,
     link: "https://adham422.github.io/movies/",
   },
   {
     name: { en: "Task Management System", ar:"إدارة المهام" },
     desc: { en: "Organize and track your daily tasks with a simple system.", ar: "نظام بسيط لتنظيم ومتابعة المهام اليومية." },
-    img: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b",
+    img: image6,
     link: "#",
   },
   {
     name: { en: "Fitness Tracker", ar: "تطبيق تتبع اللياقة" },
     desc: { en: "Track workouts, progress, and fitness goals بسهولة.", ar: "تتبع التمارين والتقدم لتحقيق أهداف اللياقة." },
-    img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
+    img: image7,
     link: "https://www.youtube.com/watch?v=v-FZHW4zQuU&t=2s",
   },
   {
     name: { en: "Restaurant Menu", ar: "قائمة مطعم" },
     desc: { en: "Digital restaurant menu with clean UI and smooth experience.", ar: "قائمة مطعم رقمية بواجهة سهلة وجذابة." },
-    img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+    img: image8,
     link: "https://adham422.github.io/resturant_menu/",
   },
   {
     name: { en: "YouTube Channel", ar: "قناة يوتيوب" },
     desc: { en: "Educational programming content and tutorials for developers.", ar: "قناة تقدم محتوى تعليمي في البرمجة والمشاريع العملية." },
-    img: "https://images.unsplash.com/photo-1611162616475-46b635cb6868",
+    img: image9,
     link: "https://www.youtube.com/@adhamhashem5303",
   },
   {
     name: { en: "Drag & Drop System", ar: "نظام السحب والإفلات" },
     desc: { en: "Interactive drag and drop interface for better user experience.", ar: "نظام تفاعلي للسحب والإفلات لتحسين تجربة المستخدم." },
-    img: "https://images.unsplash.com/photo-1558655146-364adaf1fcc9",
+    img: image10,
     link: "https://adham422.github.io/DragandDrop/",
   },
   {
     name: { en: "Organic Store", ar: "متجر منتجات طبيعية" },
     desc: { en: "E-commerce website for selling organic and healthy products.", ar: "متجر إلكتروني لبيع المنتجات الطبيعية والصحية." },
-    img: "https://images.unsplash.com/photo-1542838132-92c53300491e",
+    img: image11,
     link: "https://adham422.github.io/Organic_Store/",
   },
   {
-    name: { en: "YouTube Channel", ar: "قناة يوتيوب" },
+    name: { en: "YouTube Channel Courses", ar: "دورات قناة اليوتيوب" },
     desc: { en: "Educational programming content and tutorials for developers.", ar: "قناة تقدم محتوى تعليمي في البرمجة والمشاريع العملية." },
-    img: "https://images.unsplash.com/photo-1611162616475-46b635cb6868",
-    link: "https://www.youtube.com/@adhamhashem5303",
+    img: image9,
+    link: "https://youtu.be/fsOz4JeHvl0?si=0kBy82XTsJDkQTcP",
   }
 ];
-
 export default function Projects({ lang = "en", dark = false }) {
   return (
     <section

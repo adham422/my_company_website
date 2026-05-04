@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import heroImg from "../images/2.jpeg";
+import heroImg from "../images/logoCompany.png";
 
 export default function Home({ lang = "en", dark = false }) {
   const content = {

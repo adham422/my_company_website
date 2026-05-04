@@ -9,10 +9,9 @@ import Services from "./pages/Services";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
-
+import ServicesDetails from "./pages/ServicesDetails";
 function AnimatedRoutes({ lang, dark }) {
   const location = useLocation();
-
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
@@ -20,12 +19,12 @@ function AnimatedRoutes({ lang, dark }) {
         <Route path="services" element={<PageWrapper><Services lang={lang} dark={dark} /></PageWrapper>} />
         <Route path="projects" element={<PageWrapper><Projects lang={lang} dark={dark} /></PageWrapper>} />
         <Route path="contact" element={<PageWrapper><Contact lang={lang} dark={dark} /></PageWrapper>} />
+        <Route path="services/:id" element={<PageWrapper><ServicesDetails lang={lang} dark={dark} /></PageWrapper>} />
       </Routes>
       <Footer lang={lang} dark={dark} />
     </AnimatePresence>
   );
 }
-
 export function PageWrapper({ children }) {
   return (
     <motion.div
@@ -38,12 +37,9 @@ export function PageWrapper({ children }) {
     </motion.div>
   );
 }
-
 export default function App() {
   const [lang, setLang] = useState("ar");
   const [dark, setDark] = useState(true);
-
-  // تنسيق الألوان الموحد لكل الوضعين
   const colors = {
     dark: {
       bg: "#111827",
@@ -64,9 +60,7 @@ export default function App() {
       btnBorder: "#3b82f6",
     },
   };
-
   const theme = dark ? colors.dark : colors.light;
-
   return (
     <div
       dir={lang === "ar" ? "rtl" : "ltr"}
