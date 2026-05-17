@@ -12,7 +12,6 @@ import ser8 from "../images/Artboard8.jpeg";
 import ser9 from "../images/Artboard9.jpeg";
 import ser10 from "../images/Artboard10.jpeg";
 import ser11 from "../images/Artboard11.jpeg";
-import workVideo from "../video/work.mp4";
 
 const servicesData = [
   {
@@ -42,7 +41,6 @@ We ensure a smooth and fast user experience across all devices.
 Our goal is to help you launch and start selling immediately with zero hassle.`,
     
     image: ser1,
-    video: workVideo,
     icon: "🛒",
   },
   
@@ -69,7 +67,6 @@ Optimized for websites, apps, and social media platforms.
 Our goal is to give your business a strong and trustworthy first impression.`,
     
     image: ser2,
-    video: workVideo,
     icon: "🎨",
   },
   
@@ -96,7 +93,6 @@ We organize category visuals to enhance browsing experience.
 We help turn visitors into actual buyers.`,
     
     image: ser3,
-    video: workVideo,
     icon: "🖼️",
   },
   
@@ -123,7 +119,6 @@ Improve your Google visibility without paid ads.
 Help you reach new customers organically and consistently.`,
     
     image: ser4,
-    video: workVideo,
     icon: "📈",
   },
   
@@ -150,7 +145,6 @@ Make your store completely unique.
 Focus on both design quality and user experience.`,
     
     image: ser5,
-    video: workVideo,
     icon: "💻",
   },
   
@@ -177,7 +171,6 @@ Add interactivity to keep users engaged longer.
 All aimed at increasing your sales.`,
     
     image: ser6,
-    video: workVideo,
     icon: "⚙️",
   },
   
@@ -204,7 +197,6 @@ Perfect for B2B and partnerships.
 Helps you build trust with big clients.`,
     
     image: ser7,
-    video: workVideo,
     icon: "📄",
   },
   
@@ -231,7 +223,6 @@ Convert engagement into real sales.
 Keep your accounts working for you 24/7.`,
     
     image: ser8,
-    video: workVideo,
     icon: "📱",
   },
   
@@ -258,7 +249,6 @@ Make your link simple and memorable.
 Boost your brand credibility significantly.`,
     
     image: ser9,
-    video: workVideo,
     icon: "🌐",
   },
   {
@@ -280,7 +270,6 @@ We cover multiple fields like programming, reports, and presentations.
 Our goal is to help you submit high-quality work while actually learning.`,
     
     image: ser10,
-    video: workVideo,
     icon: "📚",
   },
   
@@ -303,7 +292,6 @@ We provide full explanation plus a ready-to-use presentation.
 Our goal is to make your project stand out and benefit you after graduation.`,
     
     image: ser11,
-    video: workVideo,
     icon: "🎓",
   },
 ];
